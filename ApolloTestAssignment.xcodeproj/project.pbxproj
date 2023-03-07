@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A9ACD029B663B100D1701C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACCF29B663B100D1701C /* AppDelegate.swift */; };
-		01A9ACD229B663B100D1701C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACD129B663B100D1701C /* ContentView.swift */; };
-		01A9ACD429B663B300D1701C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A9ACD329B663B300D1701C /* Assets.xcassets */; };
 		01A9ACD729B663B300D1701C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A9ACD629B663B300D1701C /* Preview Assets.xcassets */; };
 		01A9ACD929B663B300D1701C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACD829B663B300D1701C /* Persistence.swift */; };
 		01A9ACDC29B663B300D1701C /* ApolloTestAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACDA29B663B300D1701C /* ApolloTestAssignment.xcdatamodeld */; };
 		01A9ACE729B663B400D1701C /* ApolloTestAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACE629B663B400D1701C /* ApolloTestAssignmentTests.swift */; };
 		01A9ACF129B663B400D1701C /* ApolloTestAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACF029B663B400D1701C /* ApolloTestAssignmentUITests.swift */; };
 		01A9ACF329B663B400D1701C /* ApolloTestAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9ACF229B663B400D1701C /* ApolloTestAssignmentUITestsLaunchTests.swift */; };
-		01C59E1C29B6A97800FC4EBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E1B29B6A97800FC4EBE /* SceneDelegate.swift */; };
+		01C59E3429B6B43800FC4EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E3229B6B43800FC4EBE /* AppDelegate.swift */; };
+		01C59E3529B6B43800FC4EBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E3329B6B43800FC4EBE /* SceneDelegate.swift */; };
+		01C59E3829B6B45800FC4EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C59E3729B6B45800FC4EBE /* Assets.xcassets */; };
+		01C59E3E29B6B45E00FC4EBE /* ApolloBluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E3C29B6B45E00FC4EBE /* ApolloBluetoothService.swift */; };
+		01C59E4429B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4129B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift */; };
+		01C59E4529B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4229B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift */; };
+		01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */; };
+		01C59E4929B6B64200FC4EBE /* ApolloScannedBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4829B6B64200FC4EBE /* ApolloScannedBeacon.swift */; };
+		01C59E4B29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */; };
+		01C59E4D29B6B6B400FC4EBE /* ApolloScannedVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */; };
+		01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */; };
+		01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */; };
+		01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */; };
+		01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +48,6 @@
 
 /* Begin PBXFileReference section */
 		01A9ACCC29B663B100D1701C /* ApolloTestAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloTestAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01A9ACCF29B663B100D1701C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01A9ACD129B663B100D1701C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		01A9ACD329B663B300D1701C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01A9ACD629B663B300D1701C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01A9ACD829B663B300D1701C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		01A9ACDB29B663B300D1701C /* ApolloTestAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ApolloTestAssignment.xcdatamodel; sourceTree = "<group>"; };
@@ -50,7 +57,20 @@
 		01A9ACEC29B663B400D1701C /* ApolloTestAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApolloTestAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01A9ACF029B663B400D1701C /* ApolloTestAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloTestAssignmentUITests.swift; sourceTree = "<group>"; };
 		01A9ACF229B663B400D1701C /* ApolloTestAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloTestAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		01C59E1B29B6A97800FC4EBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		01C59E3229B6B43800FC4EBE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01C59E3329B6B43800FC4EBE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		01C59E3729B6B45800FC4EBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01C59E3C29B6B45E00FC4EBE /* ApolloBluetoothService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothService.swift; sourceTree = "<group>"; };
+		01C59E4129B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothScannerViewModel.swift; sourceTree = "<group>"; };
+		01C59E4229B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothScannerTabView.swift; sourceTree = "<group>"; };
+		01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloTabsView.swift; sourceTree = "<group>"; };
+		01C59E4829B6B64200FC4EBE /* ApolloScannedBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedBeacon.swift; sourceTree = "<group>"; };
+		01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothManagerError.swift; sourceTree = "<group>"; };
+		01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedVehicle.swift; sourceTree = "<group>"; };
+		01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedDevicesViewModelState.swift; sourceTree = "<group>"; };
+		01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBeaconsViewModelAction.swift; sourceTree = "<group>"; };
+		01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloTabSelectionService.swift; sourceTree = "<group>"; };
+		01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloConcurencyService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +121,15 @@
 		01A9ACCE29B663B100D1701C /* ApolloTestAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				01A9ACCF29B663B100D1701C /* AppDelegate.swift */,
-				01A9ACD129B663B100D1701C /* ContentView.swift */,
-				01A9ACD329B663B300D1701C /* Assets.xcassets */,
+				01C59E4729B6B46900FC4EBE /* DataLayer */,
+				01C59E3F29B6B46300FC4EBE /* PresentationLayer */,
+				01C59E3929B6B45E00FC4EBE /* DomainLayer */,
+				01C59E3629B6B45800FC4EBE /* Resources */,
+				01C59E3129B6B43800FC4EBE /* Application */,
 				01A9ACD829B663B300D1701C /* Persistence.swift */,
 				01A9ACDD29B663B300D1701C /* Info.plist */,
 				01A9ACDA29B663B300D1701C /* ApolloTestAssignment.xcdatamodeld */,
 				01A9ACD529B663B300D1701C /* Preview Content */,
-				01C59E1B29B6A97800FC4EBE /* SceneDelegate.swift */,
 			);
 			path = ApolloTestAssignment;
 			sourceTree = "<group>";
@@ -136,6 +157,95 @@
 				01A9ACF229B663B400D1701C /* ApolloTestAssignmentUITestsLaunchTests.swift */,
 			);
 			path = ApolloTestAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		01C59E3129B6B43800FC4EBE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E3229B6B43800FC4EBE /* AppDelegate.swift */,
+				01C59E3329B6B43800FC4EBE /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		01C59E3629B6B45800FC4EBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E3729B6B45800FC4EBE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		01C59E3929B6B45E00FC4EBE /* DomainLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E3A29B6B45E00FC4EBE /* Services */,
+			);
+			path = DomainLayer;
+			sourceTree = "<group>";
+		};
+		01C59E3A29B6B45E00FC4EBE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E5529B6CD1800FC4EBE /* Concurrency */,
+				01C59E3B29B6B45E00FC4EBE /* Bluetooth */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		01C59E3B29B6B45E00FC4EBE /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E3C29B6B45E00FC4EBE /* ApolloBluetoothService.swift */,
+				01C59E3D29B6B45E00FC4EBE /* Models */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		01C59E3D29B6B45E00FC4EBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E4829B6B64200FC4EBE /* ApolloScannedBeacon.swift */,
+				01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01C59E3F29B6B46300FC4EBE /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E4029B6B46300FC4EBE /* BluetoothTab */,
+				01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */,
+				01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		01C59E4029B6B46300FC4EBE /* BluetoothTab */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */,
+				01C59E4129B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift */,
+				01C59E4229B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift */,
+				01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */,
+				01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */,
+			);
+			path = BluetoothTab;
+			sourceTree = "<group>";
+		};
+		01C59E4729B6B46900FC4EBE /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		01C59E5529B6CD1800FC4EBE /* Concurrency */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */,
+			);
+			path = Concurrency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +352,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C59E3829B6B45800FC4EBE /* Assets.xcassets in Resources */,
 				01A9ACD729B663B300D1701C /* Preview Assets.xcassets in Resources */,
-				01A9ACD429B663B300D1701C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01C59E1C29B6A97800FC4EBE /* SceneDelegate.swift in Sources */,
+				01C59E4D29B6B6B400FC4EBE /* ApolloScannedVehicle.swift in Sources */,
+				01C59E4929B6B64200FC4EBE /* ApolloScannedBeacon.swift in Sources */,
+				01C59E3429B6B43800FC4EBE /* AppDelegate.swift in Sources */,
+				01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */,
+				01C59E3E29B6B45E00FC4EBE /* ApolloBluetoothService.swift in Sources */,
+				01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */,
+				01C59E3529B6B43800FC4EBE /* SceneDelegate.swift in Sources */,
+				01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */,
+				01C59E4429B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift in Sources */,
+				01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */,
+				01C59E4529B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift in Sources */,
 				01A9ACD929B663B300D1701C /* Persistence.swift in Sources */,
-				01A9ACD229B663B100D1701C /* ContentView.swift in Sources */,
-				01A9ACD029B663B100D1701C /* AppDelegate.swift in Sources */,
+				01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */,
+				01C59E4B29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift in Sources */,
 				01A9ACDC29B663B300D1701C /* ApolloTestAssignment.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApolloTestAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = GHM8LJ696F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApolloTestAssignment/Info.plist;
@@ -460,6 +581,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApolloTestAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = GHM8LJ696F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ApolloTestAssignment/Info.plist;

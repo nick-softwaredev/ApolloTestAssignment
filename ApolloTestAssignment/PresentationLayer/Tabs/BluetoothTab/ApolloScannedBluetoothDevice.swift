@@ -12,19 +12,25 @@ struct ApolloScannedBluetoothDevice: Identifiable {
     var beacon: String
     var rssi: Int?
     
-    func imageForRSSI() -> UIImage {
+    func textForRSSI() -> Text {
         guard let safeRSSI = rssi else {
-            return #imageLiteral(resourceName: "Vector-6")
+            return Text("")
         }
         switch safeRSSI {
         case -60 ... 0:
-            return UIImage(named: "rssi high") ?? UIImage()
+            return Text("•••")
+                .font(.title)
+                .foregroundColor(Color.green)
         case -80 ... -61:
-            return UIImage(named: "rssi medium") ?? UIImage()
+            return Text("•• ")
+                .font(.title)
+                .foregroundColor(Color.orange)
         case -100 ... -81:
-            return UIImage(named: "rssi low") ?? UIImage()
+            return Text("•  ")
+                .font(.title)
+                .foregroundColor(Color.red)
         default:
-            return UIImage()
+            return Text("")
         }
     }
 }

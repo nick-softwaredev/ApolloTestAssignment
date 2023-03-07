@@ -10,7 +10,7 @@ import Foundation
 extension ApolloBluetoothScannerViewModel {
     struct ApolloScannedDevicesViewModelState {
         var isScanning: Bool
-        var scannedDevices: [ApolloScannedBluetoothDevice]?
+        var scannedDevices: [ApolloScannedBluetoothDevice] = []
         var selectedDevice: ApolloScannedBluetoothDevice?
         var bluetoothErorr: ApolloBluetoothService.ApolloBluetoothManagerError?
     }

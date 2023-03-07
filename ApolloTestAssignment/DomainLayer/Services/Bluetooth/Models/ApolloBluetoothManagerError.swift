@@ -17,6 +17,7 @@ extension ApolloBluetoothService {
         case unknown
         case resetting
         case poweredOff
+        case noDevicesFound // generated manually
         
         var shortDescription: String {
             switch  self {
@@ -30,6 +31,8 @@ extension ApolloBluetoothService {
                 return "Bluetooth is unauthorized on this device.\nCheck device restriction settings."
             case .unknown:
                 return "An unknown Bluetooth error. Please, try again."
+            case .noDevicesFound:
+                return "No devices found nearby. Please, try again."
             }
         }
     }

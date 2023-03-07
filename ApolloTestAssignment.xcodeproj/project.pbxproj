@@ -22,11 +22,14 @@
 		01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */; };
 		01C59E4929B6B64200FC4EBE /* ApolloScannedBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4829B6B64200FC4EBE /* ApolloScannedBeacon.swift */; };
 		01C59E4B29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */; };
-		01C59E4D29B6B6B400FC4EBE /* ApolloScannedVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */; };
+		01C59E4D29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4C29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift */; };
 		01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */; };
 		01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */; };
 		01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */; };
 		01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */; };
+		01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */; };
+		01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */; };
+		01C59E6029B7D04D00FC4EBE /* ApolloViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +69,14 @@
 		01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloTabsView.swift; sourceTree = "<group>"; };
 		01C59E4829B6B64200FC4EBE /* ApolloScannedBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedBeacon.swift; sourceTree = "<group>"; };
 		01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothManagerError.swift; sourceTree = "<group>"; };
-		01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedVehicle.swift; sourceTree = "<group>"; };
+		01C59E4C29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedBluetoothDevice.swift; sourceTree = "<group>"; };
 		01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedDevicesViewModelState.swift; sourceTree = "<group>"; };
 		01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBeaconsViewModelAction.swift; sourceTree = "<group>"; };
 		01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloTabSelectionService.swift; sourceTree = "<group>"; };
 		01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloConcurencyService.swift; sourceTree = "<group>"; };
+		01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloExtensions.swift; sourceTree = "<group>"; };
+		01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloColors.swift; sourceTree = "<group>"; };
+		01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloViewStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				01C59E3729B6B45800FC4EBE /* Assets.xcassets */,
+				01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -214,7 +221,9 @@
 		01C59E3F29B6B46300FC4EBE /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				01C59E4029B6B46300FC4EBE /* BluetoothTab */,
+				01C59E5E29B7D03600FC4EBE /* ViewStyles */,
+				01C59E5C29B7C4E700FC4EBE /* Extensions */,
+				01C59E5D29B7C4F500FC4EBE /* Tabs */,
 				01C59E4329B6B46300FC4EBE /* ApolloTabsView.swift */,
 				01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */,
 			);
@@ -224,7 +233,7 @@
 		01C59E4029B6B46300FC4EBE /* BluetoothTab */ = {
 			isa = PBXGroup;
 			children = (
-				01C59E4C29B6B6B400FC4EBE /* ApolloScannedVehicle.swift */,
+				01C59E4C29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift */,
 				01C59E4129B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift */,
 				01C59E4229B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift */,
 				01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */,
@@ -246,6 +255,30 @@
 				01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */,
 			);
 			path = Concurrency;
+			sourceTree = "<group>";
+		};
+		01C59E5C29B7C4E700FC4EBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01C59E5D29B7C4F500FC4EBE /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E4029B6B46300FC4EBE /* BluetoothTab */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		01C59E5E29B7D03600FC4EBE /* ViewStyles */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */,
+			);
+			path = ViewStyles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,19 +411,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01C59E4D29B6B6B400FC4EBE /* ApolloScannedVehicle.swift in Sources */,
+				01C59E4D29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift in Sources */,
 				01C59E4929B6B64200FC4EBE /* ApolloScannedBeacon.swift in Sources */,
 				01C59E3429B6B43800FC4EBE /* AppDelegate.swift in Sources */,
 				01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */,
 				01C59E3E29B6B45E00FC4EBE /* ApolloBluetoothService.swift in Sources */,
 				01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */,
+				01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */,
 				01C59E3529B6B43800FC4EBE /* SceneDelegate.swift in Sources */,
 				01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */,
 				01C59E4429B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift in Sources */,
 				01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */,
 				01C59E4529B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift in Sources */,
+				01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */,
 				01A9ACD929B663B300D1701C /* Persistence.swift in Sources */,
 				01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */,
+				01C59E6029B7D04D00FC4EBE /* ApolloViewStyles.swift in Sources */,
 				01C59E4B29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift in Sources */,
 				01A9ACDC29B663B300D1701C /* ApolloTestAssignment.xcdatamodeld in Sources */,
 			);
@@ -567,9 +603,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Treest.ApolloTestAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -597,9 +636,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Treest.ApolloTestAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -17,22 +17,25 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
     private let bluetoothService: ApolloBluetoothServiceProtocol
     private var bluetoothManagerCancellable: AnyCancellable?
     private var timerCancellable: Cancellable?
-    private let bluetoothScanTimer = Timer.publish(every: ApolloBluetoothService.bluetoothScanSecondsTimer, on: .main, in: .default).autoconnect() // stop scan after 30 seconds
+    private let bluetoothScanTimer = Timer.publish(every: ApolloBluetoothService.bluetoothScanSecondsTimer, on: .main, in: .default).autoconnect() // stop scan after timer
     
-    @Published var state: ApolloScannedDevicesViewModelState = ApolloScannedDevicesViewModelState(isScanning: false, scannedDevices: .none, selectedDevice: .none, bluetoothErorr: .none)
+    @Published var state: ApolloScannedDevicesViewModelState = ApolloScannedDevicesViewModelState(isScanning: false, scannedDevices: [], selectedDevice: .none, bluetoothErorr: .none)
     
     init(bluetoothService: ApolloBluetoothServiceProtocol) {
         self.bluetoothService = bluetoothService
     }
     
-    
     func perform(action: ApolloBeaconsViewModelAction) {
         switch action {
         case .startScanning:
-            state = ApolloScannedDevicesViewModelState(isScanning: true, scannedDevices: .none, selectedDevice: .none, bluetoothErorr: .none)
-            timerCancellable = bluetoothScanTimer.sink { _ in
+            state = ApolloScannedDevicesViewModelState(isScanning: true, scannedDevices: [], selectedDevice: .none, bluetoothErorr: .none)
+            timerCancellable = bluetoothScanTimer.sink { [weak self ] _ in
+                guard let self = self else { return }
                 print("BLE SCANNING TIMED OUT: Scanning sstoped")
                 self.perform(action: .stopScanning)
+                if self.state.scannedDevices.isEmpty {
+                    self.state.bluetoothErorr = .noDevicesFound
+                }
             }
             setupDeviceScanning()
             bluetoothService.startScanningForBeacons()
@@ -44,13 +47,14 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
             state.selectedDevice = .none
         case .reetToOriginalState:
             perform(action: .stopScanning)
-            state = ApolloScannedDevicesViewModelState(isScanning: false, scannedDevices: .none, selectedDevice: .none, bluetoothErorr: .none)
+            state = ApolloScannedDevicesViewModelState(isScanning: false, scannedDevices: [], selectedDevice: .none, bluetoothErorr: .none)
         }
     }
     
     private func setupDeviceScanning() {
         bluetoothManagerCancellable = bluetoothService.result
             .subscribe(on: DispatchQueue(label: ApolloConcurencyServiceQueuIndetifiers.bluetoothScanningQueue, qos: .userInteractive))
+            .delay(for: 3, scheduler: DispatchQueue.main)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { bleManagerError in
                 switch bleManagerError {

@@ -21,7 +21,7 @@ struct ApolloStoreTabView: View {
         ),
         ApolloStoreItem(
             type: .service,
-            image: "",
+            image: "scooterService",
             name: "theft and loss",
             title: "Apollo Care",
             description: .none,
@@ -31,7 +31,7 @@ struct ApolloStoreTabView: View {
     @State var accessories = [
         ApolloStoreItem(
             type: .accessorie,
-            image: "",
+            image: "scooterAccessorie",
             name: .none,
             title: "Apollo Bag",
             description: "Some interesting description here",
@@ -41,7 +41,7 @@ struct ApolloStoreTabView: View {
     @State var upgrades = [
         ApolloStoreItem(
             type: .upgrade,
-            image: "",
+            image: "scooter",
             name: .none,
             title: "Phantom V3 Kit",
             description: "At magnum periculum adiit in oculis quidem exercitus quid ex eo delectu rerum.",
@@ -64,7 +64,7 @@ struct ApolloStoreTabView: View {
                     sectionView(title: "Apollo Care & Protect", description: "Protect your new scooter")
                     .padding(.bottom, 20)
                     VStack {
-                        StoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 242, itemPadding: 16, shouldOffset: true)
+                        StoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 255, itemPadding: 16, shouldOffset: true)
                     }
                     .background(Color.blue)
                     .frame(height: 330)
@@ -72,7 +72,7 @@ struct ApolloStoreTabView: View {
                     .padding(.bottom, 20)
                     .padding(.top, 44)
                     VStack {
-                       StoreListView(viewModels: $accessories, activePageIndex: $servicesActiveIndex, itemWidth: 242, itemPadding: 16, shouldOffset: true)
+                       StoreListView(viewModels: $accessories, activePageIndex: $servicesActiveIndex, itemWidth: 255, itemPadding: 16, shouldOffset: true)
                     }
                     .background(Color.blue)
                     .frame(height: 337)
@@ -83,7 +83,7 @@ struct ApolloStoreTabView: View {
                         StoreListView(viewModels: $upgrades, activePageIndex: $servicesActiveIndex, itemWidth: UIScreen.main.bounds.width - 32, itemPadding: 0, shouldOffset: false)
                     }
                     .background(Color.blue)
-                    .frame(height: 380)
+                    .frame(height: 406)
                 }
             }
         }
@@ -161,7 +161,16 @@ struct StoreListView: View {
                 ) {
                     ForEach(viewModels, id: \.id) { viewModel in
                         ZStack {
-                            // TODO: - IMAGE HERE
+                            VStack {
+                                if viewModel.type == .upgrade {
+                                    Image(viewModel.image)
+                                } else {
+                                    Image(viewModel.image)
+                                        .resizable()
+                                        .frame(height: 223)
+                                }
+                                Spacer()
+                            }
                             VStack {
                                 Spacer()
                                 VStack {
@@ -172,7 +181,7 @@ struct StoreListView: View {
                                     cardView(item: viewModel)
                                 }
                                 .padding(.bottom, 18)
-                                .background(Color.yellow)  // TODO: - gradient parralaz
+                                .background(Color.yellow)
                             }
                         }
                         .addBorder(Color(ApolloColors.apolloBorderColor), width: 1, cornerRadius: 16, corners: .allCorners)

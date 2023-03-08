@@ -46,3 +46,12 @@ struct ApolloActionButtonStyle: ButtonStyle {
     }
 }
 
+extension UITabBarController {
+    //Configure  Global TabBarController, TabBar, TabBarItems appearance
+    override open func viewWillLayoutSubviews() {
+        let standardAppearance = UITabBarAppearance()
+        standardAppearance.backgroundColor = UIColor.black
+        standardAppearance.shadowColor = UIColor.black
+        tabBar.standardAppearance = standardAppearance
+    }
+}

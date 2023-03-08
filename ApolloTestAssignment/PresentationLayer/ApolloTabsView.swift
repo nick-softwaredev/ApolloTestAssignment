@@ -12,7 +12,7 @@ struct ApolloTabsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject private var tabSelectionService: ApolloTabSelectionService
     private let bluetoothService: ApolloBluetoothServiceProtocol
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -21,7 +21,7 @@ struct ApolloTabsView: View {
     init(bluetoothService: ApolloBluetoothServiceProtocol) {
         self.bluetoothService = bluetoothService
     }
-
+    
     var body: some View {
         TabView(selection: $tabSelectionService.selectedTab, content: {
             NavigationView {
@@ -29,13 +29,16 @@ struct ApolloTabsView: View {
             }
             .tabItem {
                 VStack {
-                   // Image()  // TODO: add iamge
+                    // Image()  // TODO: add iamge
                     Text("Scan")
                 }
             }
             .tag(0)
             NavigationView {
-                ApolloStoreTabView()
+                VStack(spacing: 0) {
+                    ApolloStoreTabView()
+                    Divider()
+                }
             }
             .tabItem {
                 VStack {

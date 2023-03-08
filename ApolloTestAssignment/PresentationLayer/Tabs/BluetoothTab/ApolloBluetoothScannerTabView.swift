@@ -18,7 +18,7 @@ struct ApolloBluetoothScannerTabView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.gray, Color.black], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color(ApolloColors.apolloOrange), Color.black], startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 /* TODO: show some detailed info view about device
@@ -47,10 +47,6 @@ struct ApolloBluetoothScannerTabView: View {
     @ViewBuilder var scannedDevicesListView: some View {
         ScrollView {
             VStack {
-                Text("SCAN FOR SCOOTER")
-                    .foregroundColor(.white)
-                    .font(.system(size: 32, weight: .heavy))
-                    .padding(.top, 8)
                 HStack {
                     Text("✨")
                         .font(.system(size: 50))

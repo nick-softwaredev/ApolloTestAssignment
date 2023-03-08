@@ -59,7 +59,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
         manager.stopScan()
         foundPeripherals.removeAll()
     }
-    
+    //TODO: - improve this algo code.
     //MARK: - CBCentralManagerDelegate
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print(peripheral.name ?? "", RSSI)

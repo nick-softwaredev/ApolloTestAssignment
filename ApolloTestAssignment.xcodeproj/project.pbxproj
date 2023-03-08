@@ -30,6 +30,7 @@
 		01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */; };
 		01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */; };
 		01C59E6029B7D04D00FC4EBE /* ApolloViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */; };
+		01C59E6329B831A600FC4EBE /* ApolloStoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloExtensions.swift; sourceTree = "<group>"; };
 		01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloColors.swift; sourceTree = "<group>"; };
 		01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloViewStyles.swift; sourceTree = "<group>"; };
+		01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 		01C59E5D29B7C4F500FC4EBE /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				01C59E6129B7D32E00FC4EBE /* StoreTab */,
 				01C59E4029B6B46300FC4EBE /* BluetoothTab */,
 			);
 			path = Tabs;
@@ -279,6 +282,14 @@
 				01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */,
 			);
 			path = ViewStyles;
+			sourceTree = "<group>";
+		};
+		01C59E6129B7D32E00FC4EBE /* StoreTab */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */,
+			);
+			path = StoreTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +430,7 @@
 				01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */,
 				01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */,
 				01C59E3529B6B43800FC4EBE /* SceneDelegate.swift in Sources */,
+				01C59E6329B831A600FC4EBE /* ApolloStoreTabView.swift in Sources */,
 				01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */,
 				01C59E4429B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift in Sources */,
 				01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */,

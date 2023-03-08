@@ -23,11 +23,9 @@ extension View {
     }
 
     public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat, corners: UIRectCorner = UIRectCorner.allCorners) -> some View where S : ShapeStyle {
-            let roundedRect = RoundedCorner(radius: cornerRadius, corners: corners) //RoundedRectangle(cornerRadius: cornerRadius)
+            let roundedRect = RoundedCorner(radius: cornerRadius, corners: corners)
             return clipShape(roundedRect)
-                    .overlay(roundedRect.stroke(content, lineWidth: width))
-               //  .overlay(roundedRect.strokeBorder(content, lineWidth: width))
-    }
+                    .overlay(roundedRect.stroke(content, lineWidth: width))    }
 }
 
 struct RoundedCorner: Shape {

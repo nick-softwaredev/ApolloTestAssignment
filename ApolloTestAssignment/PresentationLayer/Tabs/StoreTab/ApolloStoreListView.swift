@@ -13,7 +13,6 @@ struct ApolloStoreListView: View {
     
     let itemWidth: CGFloat
     let itemPadding: CGFloat
-    let shouldOffset: Bool
     
     var body: some View {
         VStack {
@@ -119,7 +118,7 @@ struct ApolloStoreListView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         Text(item.title)
                             .foregroundColor(.white)
-                            .font(.system(size: 16, weight: .medium))
+                            .font(.system(size: 24, weight: .medium))
                         if let description = item.description {
                             Text(description)
                                 .foregroundColor(Color(ApolloColors.apolloTextGrayColor))

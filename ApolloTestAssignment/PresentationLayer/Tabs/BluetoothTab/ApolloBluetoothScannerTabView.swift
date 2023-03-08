@@ -33,6 +33,17 @@ struct ApolloBluetoothScannerTabView: View {
                 scannedDevicesListView
                 Spacer()
                 bottomView
+                    // seemless border with tabbar hack :)
+                    .frame(width: UIScreen.main.bounds.width + 2)
+                    .addBorder(Color(ApolloColors.apolloBorderColor), cornerRadius: 16, corners: [.topLeft, .topRight])
+                    .overlay(
+                        VStack {
+                            Spacer()
+                            Color.black
+                                .frame(height: 10)
+                        }
+                            .offset(y: 2)
+                    )
             }
             .onDisappear(perform: {
                 viewModel.perform(action: .reetToOriginalState)

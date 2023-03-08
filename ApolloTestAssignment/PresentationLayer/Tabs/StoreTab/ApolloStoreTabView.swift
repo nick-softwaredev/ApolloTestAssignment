@@ -15,11 +15,11 @@ struct ApolloStoreTabView: View {
     @State var services = [
         ApolloStoreItem(
             type: .service,
-            image: "",
+            image: "scooterServiceNoScooter",
             name: "theft and loss",
             title: "Apollo Care + Theft and Loss",
             description: .none,
-            priceDescription: "$129 USD or $6.99/mo."
+            priceDescription: "$129 USD or $6.99/mo"
         ),
         ApolloStoreItem(
             type: .service,
@@ -27,7 +27,7 @@ struct ApolloStoreTabView: View {
             name: "theft and loss",
             title: "Apollo Care",
             description: .none,
-            priceDescription: "$129 USD or $6.99/mo."
+            priceDescription: "$129 USD or $6.99/mo"
         ),
     ]
     @State var accessories = [
@@ -37,7 +37,7 @@ struct ApolloStoreTabView: View {
             name: .none,
             title: "Apollo Bag",
             description: "Some interesting description here",
-            priceDescription: "$19.99 USD."
+            priceDescription: "$19.99 USD"
         )
     ]
     @State var upgrades = [
@@ -46,7 +46,7 @@ struct ApolloStoreTabView: View {
             image: "scooter",
             name: .none,
             title: "Phantom V3 Kit",
-            description: "At magnum periculum adiit in oculis quidem exercitus quid ex eo delectu rerum.",
+            description: "At magnum periculum adiit in oculis quidem exercitus quid ex eo delectu rerum",
             priceDescription: .none
         )
     ]
@@ -66,28 +66,28 @@ struct ApolloStoreTabView: View {
                     sectionView(title: "Apollo Care & Protect", description: "Protect your new scooter")
                     .padding(.bottom, 20)
                     VStack {
-                        ApolloStoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 255, itemPadding: 16, shouldOffset: true)
+                        ApolloStoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 255, itemPadding: 16)
                     }
                     .frame(height: 330)
                     sectionView(title: "Accessories", description: "Buy new great stuff for your scooter")
                     .padding(.bottom, 20)
                     .padding(.top, 32)
                     VStack {
-                       ApolloStoreListView(viewModels: $accessories, activePageIndex: $accessoriesActiveIndex, itemWidth: 255, itemPadding: 16, shouldOffset: true)
+                       ApolloStoreListView(viewModels: $accessories, activePageIndex: $accessoriesActiveIndex, itemWidth: 255, itemPadding: 16)
                     }
                     .frame(height: 342)
                     sectionView(title: "Upgrades", description: "Hardware & Software Updates")
                     .padding(.bottom, 20)
                     .padding(.top, 32)
                     VStack {
-                        ApolloStoreListView(viewModels: $upgrades, activePageIndex: $upgradesActiveIndex, itemWidth: UIScreen.main.bounds.width - 32, itemPadding: 0, shouldOffset: false)
+                        ApolloStoreListView(viewModels: $upgrades, activePageIndex: $upgradesActiveIndex, itemWidth: UIScreen.main.bounds.width - 32, itemPadding: 16)
                     }
                     .frame(height: 406)
-                    Color.clear.frame(height: 100) // spacing to have from tabbar once scroll down fully, in real app would probably calculate height of tabbar or something similar, but short on time for this test assignment.
+                    .padding(.bottom)
                 }
             }
         }
-        .padding()
+        .padding([.leading, .trailing, .top])
         .background(Color.black)
         .edgesIgnoringSafeArea(.bottom)
 
@@ -95,12 +95,12 @@ struct ApolloStoreTabView: View {
     
     @ViewBuilder func sectionView(title: String, description: String) -> some View {
         HStack(alignment: .top) {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .foregroundColor(.white)
                     .font(.system(size: 16, weight: .medium))
                 Text(description)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
                         .font(.system(size: 14))
             
             }

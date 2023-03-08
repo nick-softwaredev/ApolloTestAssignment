@@ -31,6 +31,8 @@
 		01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */; };
 		01C59E6029B7D04D00FC4EBE /* ApolloViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */; };
 		01C59E6329B831A600FC4EBE /* ApolloStoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */; };
+		01C59E6529B92A5F00FC4EBE /* ApolloStoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6429B92A5F00FC4EBE /* ApolloStoreListView.swift */; };
+		01C59E6729B92A9300FC4EBE /* ApolloStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6629B92A9300FC4EBE /* ApolloStoreItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		01C59E5A29B7B87300FC4EBE /* ApolloColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloColors.swift; sourceTree = "<group>"; };
 		01C59E5F29B7D04D00FC4EBE /* ApolloViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloViewStyles.swift; sourceTree = "<group>"; };
 		01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreTabView.swift; sourceTree = "<group>"; };
+		01C59E6429B92A5F00FC4EBE /* ApolloStoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreListView.swift; sourceTree = "<group>"; };
+		01C59E6629B92A9300FC4EBE /* ApolloStoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,8 @@
 			isa = PBXGroup;
 			children = (
 				01C59E6229B831A600FC4EBE /* ApolloStoreTabView.swift */,
+				01C59E6429B92A5F00FC4EBE /* ApolloStoreListView.swift */,
+				01C59E6629B92A9300FC4EBE /* ApolloStoreItem.swift */,
 			);
 			path = StoreTab;
 			sourceTree = "<group>";
@@ -433,6 +439,8 @@
 				01C59E6329B831A600FC4EBE /* ApolloStoreTabView.swift in Sources */,
 				01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */,
 				01C59E4429B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift in Sources */,
+				01C59E6729B92A9300FC4EBE /* ApolloStoreItem.swift in Sources */,
+				01C59E6529B92A5F00FC4EBE /* ApolloStoreListView.swift in Sources */,
 				01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */,
 				01C59E4529B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift in Sources */,
 				01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */,

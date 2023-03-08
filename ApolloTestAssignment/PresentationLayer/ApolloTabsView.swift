@@ -35,7 +35,7 @@ struct ApolloTabsView: View {
             }
             .tag(0)
             NavigationView {
-                //TODO: Store goes here.
+                ApolloStoreTabView()
             }
             .tabItem {
                 VStack {

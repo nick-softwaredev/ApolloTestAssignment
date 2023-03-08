@@ -139,7 +139,7 @@ struct ApolloBluetoothScannerTabView: View {
                         .foregroundColor(.white)
                 }
             }
-            .buttonStyle(ApolloActionButtonStyle())
+            .buttonStyle(ApolloActionButtonStyle(style: .dynamic))
             .padding(32)
         }
         .frame(maxWidth: .infinity)

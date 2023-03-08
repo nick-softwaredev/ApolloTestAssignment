@@ -59,36 +59,32 @@ struct ApolloStoreTabView: View {
                     Spacer()
                     Image(uiImage: UIImage(named: "avatar")!)
                 }
-                .padding(.bottom, 9)
-                sectionView(title: "Apollo Care & Protect", description: "Protect your new scooter")
-                .padding(.bottom, 24)
-                
+                .padding(.bottom, 14)
                 ScrollView {
+                    sectionView(title: "Apollo Care & Protect", description: "Protect your new scooter")
+                    .padding(.bottom, 20)
                     VStack {
-                        StoreListView(viewModels: $accessories, activePageIndex: $servicesActiveIndex)
+                        StoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 242, itemPadding: 16, shouldOffset: true)
                     }
                     .background(Color.blue)
                     .frame(height: 330)
                     sectionView(title: "Accessories", description: "Buy new great stuff for your scooter")
+                    .padding(.bottom, 20)
+                    .padding(.top, 44)
                     VStack {
-                        StoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex)
+                       StoreListView(viewModels: $accessories, activePageIndex: $servicesActiveIndex, itemWidth: 242, itemPadding: 16, shouldOffset: true)
                     }
                     .background(Color.blue)
                     .frame(height: 337)
                     sectionView(title: "Upgrades", description: "Hardware & Software Updates")
+                    .padding(.bottom, 20)
+                    .padding(.top, 44)
                     VStack {
-                        StoreListView(viewModels: $upgrades, activePageIndex: $servicesActiveIndex)
+                        StoreListView(viewModels: $upgrades, activePageIndex: $servicesActiveIndex, itemWidth: UIScreen.main.bounds.width - 32, itemPadding: 0, shouldOffset: false)
                     }
                     .background(Color.blue)
                     .frame(height: 380)
                 }
-//                VStack {
-//                    StoreListView(viewModels: $test_.accessories, activePageIndex: $test_.servicesActiveIndex)
-//                }
-//                .background(Color.blue)
-//                .frame(height: 348)
-//                sectionView(title: "Accessories", description: "Buy new great stuff for your scooter")
-//                sectionView(title: "Upgrades", description: "Hardware & Software Updates")
             }
         }
         .padding(16)
@@ -147,8 +143,9 @@ struct StoreListView: View {
     @Binding var viewModels: [ApolloStoreItem]
     @Binding var activePageIndex: Int
     
-    private let itemWidth: CGFloat = UIScreen.main.bounds.width - 32 // - 40 for horizontal padding
-    private let itemPadding: CGFloat = 16
+    let itemWidth: CGFloat
+    let itemPadding: CGFloat
+    let shouldOffset: Bool
     
     var body: some View {
         VStack {
@@ -160,17 +157,25 @@ struct StoreListView: View {
                     pageWidth: geometry.size.width,
                     tileWidth: self.itemWidth,
                     tilePadding: self.itemPadding,
-                    stackOffset: 0//-(itemWidth - itemWidth - itemPadding * 2 - 16)
+                    stackOffset: shouldOffset ? (-itemPadding * 2 - (itemPadding * 2 - itemPadding / 2 + 2)) : 0
                 ) {
                     ForEach(viewModels, id: \.id) { viewModel in
                         ZStack {
-                            Color.green
-                            cardView(item: viewModel)
-                            .padding(.horizontal)
-                            .padding(.bottom, 21.5)
+                            // TODO: - IMAGE HERE
+                            VStack {
+                                Spacer()
+                                VStack {
+                                    Color(ApolloColors.apolloBorderColor)
+                                        .frame(maxWidth: .infinity)
+                                        .frame(height: 1)
+                                        .padding(.bottom)
+                                    cardView(item: viewModel)
+                                }
+                                .padding(.bottom, 18)
+                                .background(Color.yellow)  // TODO: - gradient parralaz
+                            }
                         }
-                        .border(Color.white)
-                        .cornerRadius(16)
+                        .addBorder(Color(ApolloColors.apolloBorderColor), width: 1, cornerRadius: 16, corners: .allCorners)
                     }
                 }
             }
@@ -181,9 +186,7 @@ struct StoreListView: View {
     @ViewBuilder func cardView(item: ApolloStoreItem) -> some View {
         switch item.type {
         case .service:
-            HStack(alignment: .bottom) {
-                VStack {
-                    Spacer()
+            HStack(alignment: .center, spacing: 0) {
                     VStack(alignment: .leading, spacing: 12) {
                         Text(item.title)
                             .foregroundColor(.white)
@@ -195,30 +198,29 @@ struct StoreListView: View {
                         }
                         if let price = item.priceDescription {
                             Text(price)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(ApolloColors.apolloTextDarkGrayColor))
                                 .font(.system(size: 14, weight: .regular))
                         }
                     }
-                }
                 Spacer()
             }
+            .padding(.horizontal)
         case .accessorie:
-            HStack(alignment: .bottom)  {
+            HStack(alignment: .center)  {
                 VStack {
-                    Spacer()
                     VStack(alignment: .leading, spacing: 12) {
                         Text(item.title)
                             .foregroundColor(.white)
                             .font(.system(size: 16, weight: .medium))
                         if let description = item.description {
                             Text(description)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
                                 .font(.system(size: 12, weight: .light))
                         }
                     }
                 }
                 Spacer()
-                VStack {
+                VStack(spacing: 12) {
                     Button {
                         
                     } label: {
@@ -228,28 +230,23 @@ struct StoreListView: View {
 
                     if let price = item.priceDescription {
                         Text(price)
-                            .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .regular))
+                            .foregroundColor(Color(ApolloColors.apolloTextDarkGrayColor))
+                            .font(.system(size: 12, weight: .light))
                     }
                 }
             }
+            .padding(.horizontal)
         case .upgrade:
-            HStack(alignment: .bottom)  {
+            HStack(alignment: .center)  {
                 VStack {
-                    Spacer()
                     VStack(alignment: .leading, spacing: 12) {
                         Text(item.title)
                             .foregroundColor(.white)
                             .font(.system(size: 16, weight: .medium))
                         if let description = item.description {
                             Text(description)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
                                 .font(.system(size: 12, weight: .light))
-                        }
-                        if let price = item.priceDescription {
-                            Text(price)
-                                .foregroundColor(.white)
-                                .font(.system(size: 14, weight: .regular))
                         }
                     }
                 }
@@ -261,14 +258,9 @@ struct StoreListView: View {
                         Text("Buy")
                     }
                     .buttonStyle(ApolloActionButtonStyle(style: .fixed(height: 29, width: 61)))
-
-                    if let price = item.priceDescription {
-                        Text(price)
-                            .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .regular))
-                    }
                 }
             }
+            .padding(.horizontal)
         }
     }
 }

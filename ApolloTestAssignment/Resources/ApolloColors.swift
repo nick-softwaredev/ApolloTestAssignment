@@ -11,4 +11,7 @@ import SwiftUI
 struct ApolloColors {
     static let apolloOrange = "ApolloOrange"
     static let apolloBlue = "ApolloBlue"
+    static let apolloBorderColor = "ApolloBorderColor"
+    static let apolloTextDarkGrayColor = "ApolloTextDarkGrayColor"
+    static let apolloTextGrayColor = "ApolloTextGrayColor"
 }

@@ -32,6 +32,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
     }
     
     func startScanningForBeacons() {
+        ApolloLog.shared.log("Bluetooth did update state: \(bleState).")
         switch (bleState) {
         case .unsupported:
             result.send(completion: .failure(.unsupported))
@@ -59,7 +60,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
         manager.stopScan()
         foundPeripherals.removeAll()
     }
-
+    
     //MARK: - CBCentralManagerDelegate
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         ApolloLog.shared.log("Bluetooth did found peripheral: \(peripheral.name ?? "Unknown Name") with RSSI \(RSSI.intValue).")

@@ -63,21 +63,21 @@ struct ApolloStoreListView: View {
         switch item.type {
         case .service:
             HStack(alignment: .center, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text(item.title)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(item.title)
+                        .foregroundColor(.white)
+                        .font(.system(size: 16, weight: .medium))
+                    if let description = item.description {
+                        Text(description)
                             .foregroundColor(.white)
-                            .font(.system(size: 16, weight: .medium))
-                        if let description = item.description {
-                            Text(description)
-                                .foregroundColor(.white)
-                                .font(.system(size: 12, weight: .light))
-                        }
-                        if let price = item.priceDescription {
-                            Text(price)
-                                .foregroundColor(Color(ApolloColors.apolloTextDarkGrayColor))
-                                .font(.system(size: 14, weight: .regular))
-                        }
+                            .font(.system(size: 12, weight: .light))
                     }
+                    if let price = item.priceDescription {
+                        Text(price)
+                            .foregroundColor(Color(ApolloColors.apolloTextDarkGrayColor))
+                            .font(.system(size: 14, weight: .regular))
+                    }
+                }
                 Spacer()
             }
             .padding(.horizontal)
@@ -103,7 +103,7 @@ struct ApolloStoreListView: View {
                         Text("Buy")
                     }
                     .buttonStyle(ApolloActionButtonStyle(style: .fixed(height: 29, width: 61)))
-
+                    
                     if let price = item.priceDescription {
                         Text(price)
                             .foregroundColor(Color(ApolloColors.apolloTextDarkGrayColor))

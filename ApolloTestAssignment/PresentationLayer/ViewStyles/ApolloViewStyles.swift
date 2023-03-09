@@ -11,8 +11,8 @@ import SwiftUI
 struct ApolloActionButtonStyle: ButtonStyle {
     
     enum Style {
-       case fixed(height: CGFloat, width: CGFloat)
-       case dynamic
+        case fixed(height: CGFloat, width: CGFloat)
+        case dynamic
     }
     
     let style: Style

@@ -64,21 +64,21 @@ struct ApolloStoreTabView: View {
                 .padding(.bottom, 14)
                 ScrollView {
                     sectionView(title: "Apollo Care & Protect", description: "Protect your new scooter")
-                    .padding(.bottom, 20)
+                        .padding(.bottom, 20)
                     VStack {
                         ApolloStoreListView(viewModels: $services, activePageIndex: $servicesActiveIndex, itemWidth: 255, itemPadding: 16)
                     }
                     .frame(height: 330)
                     sectionView(title: "Accessories", description: "Buy new great stuff for your scooter")
-                    .padding(.bottom, 20)
-                    .padding(.top, 32)
+                        .padding(.bottom, 20)
+                        .padding(.top, 32)
                     VStack {
-                       ApolloStoreListView(viewModels: $accessories, activePageIndex: $accessoriesActiveIndex, itemWidth: 255, itemPadding: 16)
+                        ApolloStoreListView(viewModels: $accessories, activePageIndex: $accessoriesActiveIndex, itemWidth: 255, itemPadding: 16)
                     }
                     .frame(height: 342)
                     sectionView(title: "Upgrades", description: "Hardware & Software Updates")
-                    .padding(.bottom, 20)
-                    .padding(.top, 32)
+                        .padding(.bottom, 20)
+                        .padding(.top, 32)
                     VStack {
                         ApolloStoreListView(viewModels: $upgrades, activePageIndex: $upgradesActiveIndex, itemWidth: UIScreen.main.bounds.width - 32, itemPadding: 16)
                     }
@@ -90,7 +90,7 @@ struct ApolloStoreTabView: View {
         .padding([.leading, .trailing, .top])
         .background(Color.black)
         .edgesIgnoringSafeArea(.bottom)
-
+        
     }
     
     @ViewBuilder func sectionView(title: String, description: String) -> some View {
@@ -100,9 +100,9 @@ struct ApolloStoreTabView: View {
                     .foregroundColor(.white)
                     .font(.system(size: 16, weight: .medium))
                 Text(description)
-                        .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
-                        .font(.system(size: 14))
-            
+                    .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
+                    .font(.system(size: 14))
+                
             }
             Spacer()
             Button {

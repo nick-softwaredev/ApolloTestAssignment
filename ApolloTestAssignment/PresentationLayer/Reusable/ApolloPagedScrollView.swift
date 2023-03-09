@@ -89,7 +89,6 @@ struct ApolloPagedScrollView: View {
         return (trueOffset - leadingOffset) * -1.0
     }
     
-   
     public var body: some View {
         GeometryReader { _ in
             HStack(alignment: .center, spacing: self.tilePadding) {

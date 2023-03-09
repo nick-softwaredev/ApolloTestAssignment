@@ -8,7 +8,7 @@
 import Foundation
 
 extension ApolloBluetoothScannerViewModel {
-    enum ApolloBeaconsViewModelAction {
+    enum ApolloScannedDevicesViewModelAction {
         case startScanning
         case stopScanning
         case selectedDevice(ApolloScannedBluetoothDevice)

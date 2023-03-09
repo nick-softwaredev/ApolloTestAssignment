@@ -59,25 +59,34 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
         manager.stopScan()
         foundPeripherals.removeAll()
     }
-    //TODO: - improve this algo code.
+
     //MARK: - CBCentralManagerDelegate
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print(peripheral.name ?? "", RSSI)
         if ignoresUnnamedDevices {
-            if peripheral.name != .none {
-                if foundPeripherals.contains(where: { $0.id == peripheral.identifier }) {
-                    if let index = foundPeripherals.firstIndex(where: { $0.id == peripheral.identifier}) {
-                        foundPeripherals[index].rssi = RSSI.intValue
-                    }
-                } else {
-                    foundPeripherals.append(ApolloScannedBeacon(id: peripheral.identifier, name: peripheral.name ?? "Unnamed Device 😢", rssi: RSSI.intValue))
-                }
+            guard peripheral.name != .none else {
+                return
             }
+            updateFoundPeriherals(peripheral, RSSI)
+        } else {
+            updateFoundPeriherals(peripheral, RSSI)
         }
         result.send(foundPeripherals)
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         bleState = central.state
+    }
+    
+    //MARK: Helper funcs.
+    private func updateFoundPeriherals(_ peripheral: CBPeripheral, _ RSSI: NSNumber) {
+        // if already added to found peripherals, only update rssi level.
+        if foundPeripherals.contains(where: { $0.id == peripheral.identifier }) {
+            if let index = foundPeripherals.firstIndex(where: { $0.id == peripheral.identifier}) {
+                foundPeripherals[index].rssi = RSSI.intValue
+            }
+        } else {
+            foundPeripherals.append(ApolloScannedBeacon(id: peripheral.identifier, name: peripheral.name ?? "Unnamed Device 😢", rssi: RSSI.intValue))
+        }
     }
 }

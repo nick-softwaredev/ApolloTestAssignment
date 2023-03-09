@@ -24,7 +24,7 @@
 		01C59E4B29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */; };
 		01C59E4D29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4C29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift */; };
 		01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */; };
-		01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */; };
+		01C59E5129B6B9B900FC4EBE /* ApolloScannedDevicesViewModelAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5029B6B9B900FC4EBE /* ApolloScannedDevicesViewModelAction.swift */; };
 		01C59E5329B6BA5A00FC4EBE /* ApolloTabSelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */; };
 		01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */; };
 		01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */; };
@@ -75,7 +75,7 @@
 		01C59E4A29B6B67900FC4EBE /* ApolloBluetoothManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBluetoothManagerError.swift; sourceTree = "<group>"; };
 		01C59E4C29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedBluetoothDevice.swift; sourceTree = "<group>"; };
 		01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedDevicesViewModelState.swift; sourceTree = "<group>"; };
-		01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBeaconsViewModelAction.swift; sourceTree = "<group>"; };
+		01C59E5029B6B9B900FC4EBE /* ApolloScannedDevicesViewModelAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloScannedDevicesViewModelAction.swift; sourceTree = "<group>"; };
 		01C59E5229B6BA5A00FC4EBE /* ApolloTabSelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloTabSelectionService.swift; sourceTree = "<group>"; };
 		01C59E5629B6CD4700FC4EBE /* ApolloConcurencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloConcurencyService.swift; sourceTree = "<group>"; };
 		01C59E5829B7B0C700FC4EBE /* ApolloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloExtensions.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 				01C59E4129B6B46300FC4EBE /* ApolloBluetoothScannerViewModel.swift */,
 				01C59E4229B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift */,
 				01C59E4E29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift */,
-				01C59E5029B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift */,
+				01C59E5029B6B9B900FC4EBE /* ApolloScannedDevicesViewModelAction.swift */,
 			);
 			path = BluetoothTab;
 			sourceTree = "<group>";
@@ -442,7 +442,7 @@
 				01C59E4D29B6B6B400FC4EBE /* ApolloScannedBluetoothDevice.swift in Sources */,
 				01C59E4929B6B64200FC4EBE /* ApolloScannedBeacon.swift in Sources */,
 				01C59E3429B6B43800FC4EBE /* AppDelegate.swift in Sources */,
-				01C59E5129B6B9B900FC4EBE /* ApolloBeaconsViewModelAction.swift in Sources */,
+				01C59E5129B6B9B900FC4EBE /* ApolloScannedDevicesViewModelAction.swift in Sources */,
 				01C59E3E29B6B45E00FC4EBE /* ApolloBluetoothService.swift in Sources */,
 				01C59E4629B6B46300FC4EBE /* ApolloTabsView.swift in Sources */,
 				01C59E5B29B7B87300FC4EBE /* ApolloColors.swift in Sources */,

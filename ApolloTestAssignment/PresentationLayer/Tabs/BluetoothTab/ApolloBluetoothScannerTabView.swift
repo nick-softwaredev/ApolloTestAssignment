@@ -18,22 +18,22 @@ struct ApolloBluetoothScannerTabView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color(ApolloColors.apolloOrange), Color.black], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color(ApolloColors.apolloOrange).opacity(0.5), Color.black], startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 /* TODO: show some detailed info view about device
-                if let selectedDevice = viewModel.state.selectedDevice {
-                     NavigationLink("", destination:  EmptyView()) {
-                     
-                     }, isActive: $isPresentinDevice
-                     .disabled(true)
-                }
+                 if let selectedDevice = viewModel.state.selectedDevice {
+                 NavigationLink("", destination:  EmptyView()) {
+                 
+                 }, isActive: $isPresentinDevice
+                 .disabled(true)
+                 }
                  */
                 Spacer()
                 scannedDevicesListView
                 Spacer()
                 bottomView
-                    // seemless border with tabbar hack :)
+                // seemless border with tabbar hack :)
                     .frame(width: UIScreen.main.bounds.width + 2)
                     .addBorder(Color(ApolloColors.apolloBorderColor), cornerRadius: 16, corners: [.topLeft, .topRight])
                     .overlay(
@@ -68,38 +68,46 @@ struct ApolloBluetoothScannerTabView: View {
                 }
             }
             .padding(.bottom)
-            Color.gray
-                .opacity(0.5)
-                .frame(maxWidth: .infinity)
-                .frame(height: 1)
+            HStack {
+                Text("Found devices:")
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .regular))
+                    .isHidden((viewModel.state.scannedDevices.isEmpty))
+                Spacer()
+            }
+            .padding(.horizontal)
+            Divider()
+                .background(Color(ApolloColors.apolloBorderColor))
                 .isHidden((viewModel.state.scannedDevices.isEmpty))
             ForEach(viewModel.state.scannedDevices) { device in
-                VStack(spacing: 0) {
-                    HStack {
-                        Text(device.beacon)
-                            .foregroundColor(.white.opacity(0.75))
-                            .padding()
-                        Spacer()
-                        device.textForRSSI()
-                        Image(uiImage: UIImage(named: "arrowRight") ?? UIImage())
-                            .opacity(0.75)
-                    }
-                    .padding(.horizontal, 8)
-                    .padding(.bottom, 8)
-                    Color.gray
-                        .opacity(0.5)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 1)
-                }
-                .onTapGesture {
-                    viewModel.perform(action: .selectedDevice(device))
-                }
-                .onAppear {
-                    withAnimation(.easeIn(duration: 0.5)) { }
-                }
+                scannedDeviceRowView(device)
+                    .padding(.horizontal)
+                Divider()
+                    .background(Color(ApolloColors.apolloBorderColor))
             }
         }
         .disabled(viewModel.state.scannedDevices.isEmpty)
+    }
+    
+    @ViewBuilder func scannedDeviceRowView(_ device: ApolloScannedBluetoothDevice) -> some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text(device.name)
+                    .foregroundColor(Color(ApolloColors.apolloTextGrayColor))
+                    .font(.system(size: 14, weight: .light))
+                Spacer()
+                device.textForRSSI()
+                Image(uiImage: UIImage(named: "arrowRight") ?? UIImage())
+                    .opacity(0.75)
+            }
+            .padding(.bottom, 8)
+        }
+        .onTapGesture {
+            viewModel.perform(action: .selectedDevice(device))
+        }
+        .onAppear {
+            withAnimation(.easeIn(duration: 0.5)) { }
+        }
     }
     
     @ViewBuilder var bottomView: some View {
@@ -126,7 +134,7 @@ struct ApolloBluetoothScannerTabView: View {
                             }
                         Circle()
                             .trim(from: 0, to: 0.75)
-                            .stroke(.gray, lineWidth: 2)
+                            .stroke(.black, lineWidth: 2)
                             .background(Color.clear)
                             .frame(width: 25, height: 25)
                             .rotationEffect(Angle.degrees(rotationValue2))
@@ -147,7 +155,8 @@ struct ApolloBluetoothScannerTabView: View {
                 }
             }
             .buttonStyle(ApolloActionButtonStyle(style: .dynamic))
-            .padding(32)
+            .padding(.vertical, 32)
+            .padding(.horizontal)
         }
         .frame(maxWidth: .infinity)
         .background(Color.black)

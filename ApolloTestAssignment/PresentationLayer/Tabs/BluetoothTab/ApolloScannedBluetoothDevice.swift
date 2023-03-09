@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ApolloScannedBluetoothDevice: Identifiable {
     let id: UUID = UUID()
-    var beacon: String
+    var name: String
     var rssi: Int?
     
     func textForRSSI() -> Text {

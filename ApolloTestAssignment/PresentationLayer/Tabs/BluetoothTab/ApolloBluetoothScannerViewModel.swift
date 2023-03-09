@@ -10,7 +10,7 @@ import Combine
 
 protocol ApolloBluetoothScannerViewModelProtocol: ObservableObject {
     var state: ApolloBluetoothScannerViewModel.ApolloScannedDevicesViewModelState { get set }
-    func perform(action: ApolloBluetoothScannerViewModel.ApolloBeaconsViewModelAction)
+    func perform(action: ApolloBluetoothScannerViewModel.ApolloScannedDevicesViewModelAction)
 }
 
 final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProtocol {
@@ -25,7 +25,7 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
         self.bluetoothService = bluetoothService
     }
     
-    func perform(action: ApolloBeaconsViewModelAction) {
+    func perform(action: ApolloScannedDevicesViewModelAction) {
         switch action {
         case .startScanning:
             state = ApolloScannedDevicesViewModelState(isScanning: true, scannedDevices: [], selectedDevice: .none, bluetoothErorr: .none)
@@ -54,7 +54,7 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
     private func setupDeviceScanning() {
         bluetoothManagerCancellable = bluetoothService.result
             .subscribe(on: DispatchQueue(label: ApolloConcurencyServiceQueuIndetifiers.bluetoothScanningQueue, qos: .userInteractive))
-            .delay(for: 3, scheduler: DispatchQueue.main)
+            .delay(for: 2, scheduler: DispatchQueue.main)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { bleManagerError in
                 switch bleManagerError {
@@ -67,7 +67,7 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
             }, receiveValue: { [weak self] scannedBeaconNames in
                 var devices = [ApolloScannedBluetoothDevice]()
                 scannedBeaconNames.forEach { beacon in
-                    devices.append(ApolloScannedBluetoothDevice(beacon: beacon.name, rssi: beacon.rssi))
+                    devices.append(ApolloScannedBluetoothDevice(name: beacon.name, rssi: beacon.rssi))
                 }
                 self?.state.scannedDevices = devices.sorted { $0.rssi ?? Int() > $1.rssi ?? Int() } // filter by RSSI signal strenght.
             })

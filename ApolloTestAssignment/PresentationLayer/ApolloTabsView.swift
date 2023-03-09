@@ -29,7 +29,9 @@ struct ApolloTabsView: View {
             }
             .tabItem {
                 VStack {
-                    // Image()  // TODO: add iamge
+                    Image(uiImage: UIImage(named: "tabBluetooth") ?? UIImage())
+                        .resizable()
+                        .frame(width: 30, height: 30)
                     Text("Scan")
                 }
             }
@@ -42,7 +44,9 @@ struct ApolloTabsView: View {
             }
             .tabItem {
                 VStack {
-                    //Image()  // TODO: add iamge
+                    Image(uiImage: UIImage(named: "tabCart") ?? UIImage())
+                        .resizable()
+                        .frame(width: 30, height: 30)
                     Text("Store")
                 }
             }

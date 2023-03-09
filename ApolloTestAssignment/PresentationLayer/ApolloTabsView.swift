@@ -13,11 +13,6 @@ struct ApolloTabsView: View {
     @EnvironmentObject private var tabSelectionService: ApolloTabSelectionService
     private let bluetoothService: ApolloBluetoothServiceProtocol
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-    
     init(bluetoothService: ApolloBluetoothServiceProtocol) {
         self.bluetoothService = bluetoothService
     }

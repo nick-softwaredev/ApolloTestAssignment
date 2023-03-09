@@ -59,7 +59,7 @@ struct ApolloStoreTabView: View {
                         .foregroundColor(Color.white)
                         .font(.system(size: 24, weight: .bold))
                     Spacer()
-                    Image(uiImage: UIImage(named: "avatar")!)
+                    Image(uiImage: UIImage(named: "avatar") ?? UIImage())
                 }
                 .padding(.bottom, 14)
                 ScrollView {

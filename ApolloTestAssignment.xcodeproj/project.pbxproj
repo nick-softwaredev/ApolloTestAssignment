@@ -34,6 +34,7 @@
 		01C59E6529B92A5F00FC4EBE /* ApolloPagedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6429B92A5F00FC4EBE /* ApolloPagedScrollView.swift */; };
 		01C59E6729B92A9300FC4EBE /* ApolloStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6629B92A9300FC4EBE /* ApolloStoreItem.swift */; };
 		01C59E6A29B9436200FC4EBE /* ApolloStoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6929B9436200FC4EBE /* ApolloStoreListView.swift */; };
+		01C59E6D29B95FDB00FC4EBE /* ApolloLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C59E6C29B95FDB00FC4EBE /* ApolloLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		01C59E6429B92A5F00FC4EBE /* ApolloPagedScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloPagedScrollView.swift; sourceTree = "<group>"; };
 		01C59E6629B92A9300FC4EBE /* ApolloStoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreItem.swift; sourceTree = "<group>"; };
 		01C59E6929B9436200FC4EBE /* ApolloStoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloStoreListView.swift; sourceTree = "<group>"; };
+		01C59E6C29B95FDB00FC4EBE /* ApolloLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		01C59E3A29B6B45E00FC4EBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				01C59E6B29B95FCD00FC4EBE /* Log */,
 				01C59E5529B6CD1800FC4EBE /* Concurrency */,
 				01C59E3B29B6B45E00FC4EBE /* Bluetooth */,
 			);
@@ -307,6 +310,14 @@
 				01C59E6429B92A5F00FC4EBE /* ApolloPagedScrollView.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		01C59E6B29B95FCD00FC4EBE /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				01C59E6C29B95FDB00FC4EBE /* ApolloLog.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +466,7 @@
 				01C59E4F29B6B98C00FC4EBE /* ApolloScannedDevicesViewModelState.swift in Sources */,
 				01C59E4529B6B46300FC4EBE /* ApolloBluetoothScannerTabView.swift in Sources */,
 				01C59E5929B7B0C700FC4EBE /* ApolloExtensions.swift in Sources */,
+				01C59E6D29B95FDB00FC4EBE /* ApolloLog.swift in Sources */,
 				01A9ACD929B663B300D1701C /* Persistence.swift in Sources */,
 				01C59E5729B6CD4700FC4EBE /* ApolloConcurencyService.swift in Sources */,
 				01C59E6029B7D04D00FC4EBE /* ApolloViewStyles.swift in Sources */,

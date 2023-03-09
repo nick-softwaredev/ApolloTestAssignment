@@ -51,7 +51,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
         case .poweredOn:
             manager.scanForPeripherals(withServices: nil, options: nil)
         @unknown default:
-            print("unkwown ble state")
+            ApolloLog.shared.log("Bluetooth state is in uknonw state.")
         }
     }
     
@@ -62,7 +62,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
 
     //MARK: - CBCentralManagerDelegate
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print(peripheral.name ?? "", RSSI)
+        ApolloLog.shared.log("Bluetooth did found peripheral: \(peripheral.name ?? "Unknown Name") with RSSI \(RSSI.intValue).")
         if ignoresUnnamedDevices {
             guard peripheral.name != .none else {
                 return

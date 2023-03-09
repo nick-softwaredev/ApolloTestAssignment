@@ -31,7 +31,7 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
             state = ApolloScannedDevicesViewModelState(isScanning: true, scannedDevices: [], selectedDevice: .none, bluetoothErorr: .none)
             timerCancellable = bluetoothScanTimer.sink { [weak self ] _ in
                 guard let self = self else { return }
-                print("BLE SCANNING TIMED OUT: Scanning sstoped")
+                ApolloLog.shared.log("Bluetooth scan timer did complete.")
                 self.perform(action: .stopScanning)
                 if self.state.scannedDevices.isEmpty {
                     self.state.bluetoothErorr = .noDevicesFound
@@ -62,7 +62,7 @@ final class ApolloBluetoothScannerViewModel: ApolloBluetoothScannerViewModelProt
                     self.state.bluetoothErorr = e
                     self.stopScanProcess()
                 case .finished:
-                    print("ble cancel finished")
+                    ApolloLog.shared.log("Bluetooth scanning did finish.")
                 }
             }, receiveValue: { [weak self] scannedBeaconNames in
                 var devices = [ApolloScannedBluetoothDevice]()

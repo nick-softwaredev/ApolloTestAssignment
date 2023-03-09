@@ -59,6 +59,7 @@ final class ApolloBluetoothService: NSObject, ApolloBluetoothServiceProtocol {
     func stopScanningForBeacons() {
         manager.stopScan()
         foundPeripherals.removeAll()
+        result = PassthroughSubject<[ApolloScannedBeacon],ApolloBluetoothManagerError>()
     }
     
     //MARK: - CBCentralManagerDelegate

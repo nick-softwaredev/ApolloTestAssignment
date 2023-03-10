@@ -18,35 +18,31 @@ struct ApolloTabsView: View {
     }
     
     var body: some View {
-        TabView(selection: $tabSelectionService.selectedTab, content: {
-            NavigationView {
+            TabView(selection: $tabSelectionService.selectedTab, content: {
                 ApolloBluetoothScannerTabView(viewModel: ApolloBluetoothScannerViewModel(bluetoothService: bluetoothService))
-            }
-            .tabItem {
-                VStack {
-                    Image(uiImage: UIImage(named: "tabBluetooth") ?? UIImage())
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text("Scan")
-                }
-            }
-            .tag(0)
-            NavigationView {
+                    .tabItem {
+                        VStack {
+                            Image(uiImage: UIImage(named: "tabBluetooth") ?? UIImage())
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                            Text("Scan")
+                        }
+                    }
+                    .tag(0)
                 VStack(spacing: 0) {
                     ApolloStoreTabView()
                     Divider()
                 }
-            }
-            .tabItem {
-                VStack {
-                    Image(uiImage: UIImage(named: "tabCart") ?? UIImage())
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text("Store")
+                .tabItem {
+                    VStack {
+                        Image(uiImage: UIImage(named: "tabCart") ?? UIImage())
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text("Store")
+                    }
                 }
-            }
-            .tag(1)
-        })
+                .tag(1)
+            })
     }
 }
 

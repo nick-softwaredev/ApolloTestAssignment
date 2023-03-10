@@ -9,4 +9,4 @@ This project contains no external spm or pod dependecies so no extra manipulatio
 Assesment Sidenotes: 
 
 - This project does note implement swiftgen for assets since it's an overkill for such a tiny app.
-- Images of products in store are contain both images and texts on the image as a single PNG file, it's no a prod app approach but for this particular view is was doen to save up time to meet the deadline. 
+- Images of products in store are contain both images and texts on the image as a single PNG file, it's not a prod app approach but for this particular view is was done this way to save up time to meet the deadline. 
